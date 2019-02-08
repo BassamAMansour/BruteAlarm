@@ -1,0 +1,3 @@
+package com.bassamworks.brutealarm.alarms_management
+
+class AlarmsDispatcher

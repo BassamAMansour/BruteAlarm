@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main_activity.xml"
+    android:label="Edit Alarm"
     app:startDestination="@id/alarmsFragment">
 
     <fragment
         android:id="@+id/alarmsFragment"
-        android:name="com.bassamworks.brutealarm.fragments.AlarmsFragment"
-        android:label="AlarmsFragment" />
+        android:name="com.bassamworks.brutealarm.fragments.alarms.AlarmsFragment"
+        android:label="AlarmsFragment">
+        <action
+            android:id="@+id/action_alarmsFragment_to_editAlarmFragment"
+            app:destination="@id/editAlarmFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editAlarmFragment"
+        android:name="com.bassamworks.brutealarm.fragments.edit_alarms.EditAlarmFragment"
+        android:label="Edit Alarm"
+        tools:layout="@layout/fragment_edit_alarm">
+        <argument
+            android:name="alarmId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_editAlarmFragment_to_alarmsFragment"
+            app:destination="@id/alarmsFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@+id/alarmsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
 </navigation>
