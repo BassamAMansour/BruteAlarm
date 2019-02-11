@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -23,65 +24,72 @@
         <ToggleButton
             android:id="@+id/tb_mon"
             style="@style/dayOfWeekBtnStyle"
-            android:checked="@{alarmUtils.isDaySelected(editAlarmModel.alarm.periods, DayOfWeek.MONDAY.position)}"
             android:onCheckedChanged="@{(_, isChecked) -> editAlarmModel.onPeriodicDaySelected(DayOfWeek.MONDAY.position, isChecked)}"
             android:text="@string/mon"
             android:textOff="@string/mon"
-            android:textOn="@string/mon" />
+            android:textOn="@string/mon"
+            bind:dayIndex="@{DayOfWeek.MONDAY.position}"
+            bind:periods="@{editAlarmModel.alarm.periods}" />
 
         <ToggleButton
             android:id="@+id/tb_tue"
             style="@style/dayOfWeekBtnStyle"
-            android:checked="@{alarmUtils.isDaySelected(editAlarmModel.alarm.periods,DayOfWeek.TUESDAY.position)}"
             android:onCheckedChanged="@{(_, isChecked) -> editAlarmModel.onPeriodicDaySelected(DayOfWeek.TUESDAY.position, isChecked)}"
             android:text="@string/tue"
             android:textOff="@string/tue"
-            android:textOn="@string/tue" />
+            android:textOn="@string/tue"
+            bind:dayIndex="@{DayOfWeek.TUESDAY.position}"
+            bind:periods="@{editAlarmModel.alarm.periods}" />
 
         <ToggleButton
             android:id="@+id/tb_wed"
             style="@style/dayOfWeekBtnStyle"
-            android:checked="@{alarmUtils.isDaySelected(editAlarmModel.alarm.periods,DayOfWeek.WEDNESDAY.position)}"
             android:onCheckedChanged="@{(_, isChecked) -> editAlarmModel.onPeriodicDaySelected(DayOfWeek.WEDNESDAY.position, isChecked)}"
             android:text="@string/wed"
             android:textOff="@string/wed"
-            android:textOn="@string/wed" />
+            android:textOn="@string/wed"
+            bind:dayIndex="@{DayOfWeek.WEDNESDAY.position}"
+            bind:periods="@{editAlarmModel.alarm.periods}" />
 
         <ToggleButton
             android:id="@+id/tb_thu"
             style="@style/dayOfWeekBtnStyle"
-            android:checked="@{alarmUtils.isDaySelected(editAlarmModel.alarm.periods,DayOfWeek.THURSDAY.position)}"
             android:onCheckedChanged="@{(_, isChecked) -> editAlarmModel.onPeriodicDaySelected(DayOfWeek.THURSDAY.position, isChecked)}"
             android:text="@string/thu"
             android:textOff="@string/thu"
-            android:textOn="@string/thu" />
+            android:textOn="@string/thu"
+            bind:dayIndex="@{DayOfWeek.THURSDAY.position}"
+            bind:periods="@{editAlarmModel.alarm.periods}" />
 
         <ToggleButton
             android:id="@+id/tb_fri"
             style="@style/dayOfWeekBtnStyle"
-            android:checked="@{alarmUtils.isDaySelected(editAlarmModel.alarm.periods,DayOfWeek.FRIDAY.position)}"
             android:onCheckedChanged="@{(_, isChecked) -> editAlarmModel.onPeriodicDaySelected(DayOfWeek.FRIDAY.position, isChecked)}"
             android:text="@string/fri"
             android:textOff="@string/fri"
-            android:textOn="@string/fri" />
+            android:textOn="@string/fri"
+            bind:dayIndex="@{DayOfWeek.FRIDAY.position}"
+            bind:periods="@{editAlarmModel.alarm.periods}" />
 
         <ToggleButton
             android:id="@+id/tb_sat"
             style="@style/dayOfWeekBtnStyle"
-            android:checked="@{alarmUtils.isDaySelected(editAlarmModel.alarm.periods,DayOfWeek.SATURDAY.position)}"
             android:onCheckedChanged="@{(_, isChecked) -> editAlarmModel.onPeriodicDaySelected(DayOfWeek.SATURDAY.position, isChecked)}"
             android:text="@string/sat"
             android:textOff="@string/sat"
-            android:textOn="@string/sat" />
+            android:textOn="@string/sat"
+            bind:dayIndex="@{DayOfWeek.SATURDAY.position}"
+            bind:periods="@{editAlarmModel.alarm.periods}" />
 
         <ToggleButton
             android:id="@+id/tb_sun"
             style="@style/dayOfWeekBtnStyle"
-            android:checked="@{alarmUtils.isDaySelected(editAlarmModel.alarm.periods,DayOfWeek.SUNDAY.position)}"
             android:onCheckedChanged="@{(_, isChecked) -> editAlarmModel.onPeriodicDaySelected(DayOfWeek.SUNDAY.position, isChecked)}"
             android:text="@string/sun"
             android:textOff="@string/sun"
-            android:textOn="@string/sun" />
+            android:textOn="@string/sun"
+            bind:dayIndex="@{DayOfWeek.SUNDAY.position}"
+            bind:periods="@{editAlarmModel.alarm.periods}" />
 
     </LinearLayout>
 </layout>
